@@ -1,0 +1,23 @@
+name: mobsfscan
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v3
+
+    - name: mobsfscan
+      uses: MobSF/mobsfscan@main
+      with:
+        args: . --html --output results.html 
+
+    - name: Upload MobSF Analysis Result
+      uses: actions/upload-artifact@v2
+      with:
+        path: results.html
