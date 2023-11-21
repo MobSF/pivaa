@@ -12,13 +12,13 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v3
     
-    - name: Create .mobsf file
-      run: echo "--ignore_path ./apks" > .mobsf
+   # - name: Create .mobsf file
+      #run: echo "--ignore_path ./apks" > .mobsf
 
     - name: mobsfscan
       uses: MobSF/mobsfscan@main
       with:
-        args: '. --json --config .mobsf'
+        args: '. --json'
 
     #name: Upload MobSF Analysis Result
       #uses: actions/upload-artifact@v3
