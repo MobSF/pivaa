@@ -15,7 +15,8 @@ jobs:
     - name: Create .mobsf file
       run: |
         echo '- ignore-paths:
-                - apks' > .mobsf
+                - apks
+                - app' > .mobsf
 
     - name: mobsfscan
       uses: MobSF/mobsfscan@main
