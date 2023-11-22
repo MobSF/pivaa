@@ -13,7 +13,9 @@ jobs:
       uses: actions/checkout@v3
     
     - name: Create .mobsf file
-      run: echo "- ignore-paths:apks" > .mobsf
+      run: |
+        echo '- ignore-paths:
+                - apks' > .mobsf
 
     - name: mobsfscan
       uses: MobSF/mobsfscan@main
