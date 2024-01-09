@@ -14,9 +14,7 @@ jobs:
     
     - name: Create .mobsf file
       run: |
-        echo '- ignore-paths:
-                - app/src/main/assets/ 
-                ignore-rules:
+        echo '- ignore-rules:
                 - android_manifest_insecure_minsdk_warning
                 - android_manifest_insecure_minsdk_error
                 - android_manifest_well_known_assetlinks 
