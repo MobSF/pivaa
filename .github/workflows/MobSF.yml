@@ -17,7 +17,7 @@ jobs:
         echo '- ignore-paths:
                 - app/src/main/assets/' > .mobsf
 
-    - name: mobsfscan
+    - name: mobsfscan File
       uses: MobSF/mobsfscan@main
       with:
         args: '. --json --config .mobsf'
