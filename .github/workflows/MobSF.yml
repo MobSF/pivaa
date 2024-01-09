@@ -12,17 +12,17 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v3
     
-    - name: Create .mobsf file
-      run: |
-        echo '- ignore-rules:
-                - android_manifest_insecure_minsdk_warning
-                - android_manifest_insecure_minsdk_error
-                - android_manifest_well_known_assetlinks 
-                - android_task_hijacking1
-                - android_task_hijacking2' > .mobsf
+    #- name: Create .mobsf file
+      #run: |
+       # echo '- ignore-rules:
+            #    - android_manifest_insecure_minsdk_warning
+           #     - android_manifest_insecure_minsdk_error
+          #      - android_manifest_well_known_assetlinks 
+         #       - android_task_hijacking1
+        #        - android_task_hijacking2' > .mobsf
 
     - name: mobsfscan File
-      uses: MobSF/mobsfscan@main
+      uses: MobSF/mobsfscan@v0.3.4
       with:
         args: '. --json --config .mobsf'
 
