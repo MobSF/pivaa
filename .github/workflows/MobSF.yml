@@ -20,7 +20,7 @@ jobs:
     - name: mobsfscan File
       uses: MobSF/mobsfscan@main
       with:
-        args: '. --output --html results.html'
+        args: '. --html --output results.html'
 
     - name: Upload MobSF Analysis Result
       uses: actions/upload-artifact@v3
