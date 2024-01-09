@@ -22,7 +22,7 @@ jobs:
       with:
         args: '. --json'
 
-    #name: Upload MobSF Analysis Result
-      #uses: actions/upload-artifact@v3
-      #with:
-        #path: results.html
+    - name: Upload MobSF Analysis Result
+      uses: actions/upload-artifact@v3
+      with:
+        path: results.html
