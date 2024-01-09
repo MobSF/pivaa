@@ -16,7 +16,6 @@ jobs:
       run: |
         echo '- ignore-paths:
                 - app/src/main/assets/ 
-        
                 ignore-rules:
                 - android_manifest_insecure_minsdk_warning
                 - android_manifest_insecure_minsdk_error
@@ -27,7 +26,7 @@ jobs:
     - name: mobsfscan File
       uses: MobSF/mobsfscan@main
       with:
-        args: '. --html --output results.html'
+        args: '. --html --output results.html --config .mobsf'
 
     - name: Upload MobSF Analysis Result
       uses: actions/upload-artifact@v3
