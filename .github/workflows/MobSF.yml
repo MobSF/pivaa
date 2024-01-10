@@ -24,9 +24,9 @@ jobs:
     - name: mobsfscan File
       uses: MobSF/mobsfscan@main
       with:
-        args: '. --json || true'
+        args: '. --html --output results.html || true'
 
-    #- name: Upload MobSF Analysis Result
-      #uses: actions/upload-artifact@v3
-      #with:
-        #path: results.html
+    - name: Upload MobSF Analysis Result
+      uses: actions/upload-artifact@v3
+      with:
+        path: results.html
