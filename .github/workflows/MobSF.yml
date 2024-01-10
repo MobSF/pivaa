@@ -26,7 +26,7 @@ jobs:
          #       - android_task_hijacking1
         #        - android_task_hijacking2' > .mobsf
 
-    - name: mobsfscan File
+    - name: mobsfscan Fil
       uses: MobSF/mobsfscan@main
       with:
         args: '. --html --output results.html'
