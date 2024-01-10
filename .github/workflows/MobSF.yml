@@ -22,9 +22,9 @@ jobs:
         #        - android_task_hijacking2' > .mobsf
 
     - name: mobsfscan File
-      uses: MobSF/mobsfscan@0.3.4
+      uses: MobSF/mobsfscan@main
       with:
-        args: '. --json --config .mobsf'
+        args: '. --json'
 
     #- name: Upload MobSF Analysis Result
       #uses: actions/upload-artifact@v3
