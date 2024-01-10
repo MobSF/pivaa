@@ -11,6 +11,11 @@ jobs:
     steps:
     - name: Checkout the code
       uses: actions/checkout@v3
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
+      
     
     #- name: Create .mobsf file
       #run: |
@@ -24,7 +29,7 @@ jobs:
     - name: mobsfscan File
       uses: MobSF/mobsfscan@main
       with:
-        args: '. --html --output results.html || true'
+        args: '. --html --output results.html'
 
     - name: Upload MobSF Analysis Result
       uses: actions/upload-artifact@v3
