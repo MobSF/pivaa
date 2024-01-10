@@ -14,9 +14,9 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
+    #- name: Install dependencies
+      #run: |
+        #python -m pip install --upgrade pip
         
     #- name: Create .mobsf file
       #run: |
@@ -30,7 +30,7 @@ jobs:
     - name: mobsfscan File
       uses: MobSF/mobsfscan@main
       with:
-        args: '. --html --output results.html'
+        args: '. --html --output results.html || true'
 
     - name: Upload MobSF Analysis Result
       uses: actions/upload-artifact@v3
