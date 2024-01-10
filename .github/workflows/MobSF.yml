@@ -22,7 +22,7 @@ jobs:
         #        - android_task_hijacking2' > .mobsf
 
     - name: mobsfscan File
-      uses: MobSF/mobsfscan@main
+      uses: MobSF/mobsfscan@0.3.4
       with:
         args: '. --json'
 
