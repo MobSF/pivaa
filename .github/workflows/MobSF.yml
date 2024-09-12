@@ -1,0 +1,37 @@
+name: mobsfscan
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: pip install --upgrade pip
+        
+    #- name: Create .mobsf file
+      #run: |
+       # echo '- ignore-rules:
+            #    - android_manifest_insecure_minsdk_warning
+           #     - android_manifest_insecure_minsdk_error
+          #      - android_manifest_well_known_assetlinks 
+         #       - android_task_hijacking1
+        #        - android_task_hijacking2' > .mobsf
+
+    - name: mobsfscan File
+      uses: MobSF/mobsfscan@main
+      with:
+        args: '. --html --output results.html || true'
+
+    - name: Upload MobSF Analysis Result
+      uses: actions/upload-artifact@v3
+      with:
+        path: results.html
